@@ -1,0 +1,21 @@
+{
+  "name": "ipnetmask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "ip": "^1.1.5",
+    "ip-to-int": "^0.3.1",
+    "jade": "^1.11.0",
+    "netmask": "^1.0.6",
+    "node-cidr": "^0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

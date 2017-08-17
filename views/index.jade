@@ -1,0 +1,45 @@
+block prepend head
+  title Proyecto de Redes
+  meta(charset="UTF-8")
+  meta(name="viewport",content="width=device-width, initial-scale=1.0")
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css")
+  link(rel="stylesheet", href="css/estilos.css")
+  link(rel="icon", type="image/png", href="img/icoredes.png")
+block content 
+  header
+    .container
+      figure
+        img(src="img/logoUPA.jpg")
+  main
+    .container
+      #title.well
+        h2 Cálculo de Subnets
+      form(action="/", method="post")
+        .input-field
+          input#basenet.t_latitud.validate(type="text", name="basenet",placeholder="Dirección de Red Base")
+          label(for="basenet") Poner Red base en formato cidr ej. 192.168.0.0/16        
+        .col-md-2#calculate.calculateSubnet()
+          input.btn.btn-large.btn-block.btn-primary(type="submit", value="Calcular")
+      section
+        p 
+          span Número de Subredes:
+          input#subnets.t_longitud(type="text",name="subnets",readonly,placeholder="")
+        p 
+          span Número de host por subred:
+          input#numHosts.t_longitud(type="text",name="hosts",readonly,placeholder="")
+  footer
+    .container
+      p Realizado por: <strong>Gerson Josue Perez Aguilar</strong>, para el curso redes II
+      p Profesor: <strong>Marco Tomy Baltazar</strong>
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js")
+
+script(type="text/javascript").
+  subnets = !{JSON.stringify(subnets)};
+  numHosts = !{JSON.stringify(numHosts)};
+  basenet = !{JSON.stringify(basenet)};
+
+  document.getElementById('basenet').value = basenet
+  document.getElementById('subnets').value = subnets
+  document.getElementById('numHosts').value = numHosts
