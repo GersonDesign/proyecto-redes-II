@@ -12,10 +12,9 @@ figure{
 footer{
 	background: #f5f5f5;
 	color: #828282;
-	bottom: 0;
-	position:absolute;
+	overflow: hidden;	
 	text-align:  center;
-	width:100%;
+	
 }
 
 main section span{
@@ -27,4 +26,12 @@ main section input[type="text"]{
 	height: 20px !important;
 	margin-bottom:  0!important;
 	width: 70% !important;
+}
+
+@media screen and (min-width: 992px){
+	footer{
+		position:absolute;
+		bottom: 0;
+		width:100%;
+	}
 }
